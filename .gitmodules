@@ -1,0 +1,4 @@
+[submodule "Assets/Gamesaavy/ouattributes"]
+	url = https://gitlab.com/wcampospro/ouattributes.git
+[submodule "Assets/Gamesaavy/ousl"]
+	url = https://gitlab.com/wcampospro/ousl.git
