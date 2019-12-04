@@ -15,17 +15,18 @@ public class MovingToWaypoint : StateMachineBehaviour
     {
         _AI = animator.GetComponent<AI>();
 
-        _AI.SetDestination();
 
         _Destination = _AI.TargetOutpost.transform.position;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _AI.SetDestination();
         float distance = Vector3.Distance (animator.transform.position, _Destination);
+        Debug.Log(distance);
         if (distance < _MinimumDistance)
-
         {
+            Debug.Log("Idle Is called");
             animator.SetTrigger("Idle");
         }
     }

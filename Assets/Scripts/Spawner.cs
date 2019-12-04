@@ -16,6 +16,6 @@ public class Spawner : MonoBehaviour
     {
         if (SpawnList.Contains(this) == false) return;
         SpawnList.Remove(this);
-        Debug.Log("WHY? U NO WORK!!!!!");
+        // Debug.Log("WHY? U NO WORK!!!!!");
     }
 }

@@ -25,8 +25,8 @@ public class AI : MonoBehaviour
         _Health = GetComponent<Health>();
 
         _Agent = GetComponent<NavMeshAgent>();
-
     }
+    
     public void SetTargetOutpost(Outpost tOutpost)
     {
         TargetOutpost = tOutpost;
@@ -35,6 +35,7 @@ public class AI : MonoBehaviour
     public void SetDestination()
     {
         _Agent.SetDestination(TargetOutpost.transform.position);
+        //_Agent.SetDestination(); //Fix here
     }
 
     private void StopMovement()
@@ -49,7 +50,7 @@ public class AI : MonoBehaviour
 
         if (otherHealth != null && otherHealth.TeamNumber != _Health.TeamNumber) // checks if opposite teams bump into each other
         {
-            Debug.Log("ATTACK!", gameObject);
+            // Debug.Log("ATTACK!", gameObject);
             TargetHeatlh = otherHealth;
             StopMovement();
             Anim.SetTrigger("Attacking");

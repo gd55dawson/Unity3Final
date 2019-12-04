@@ -21,13 +21,15 @@ public class Attacking : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        _Timer -= Time.deltaTime;
-       if(_Timer < 0 && _AI.TargetHeatlh.enabled == true)
+
+       if(_Timer < 0 && _AI.TargetHeatlh.gameObject.activeInHierarchy == true)
        {
            PoolManager.GetNext(_PoolableExplosion, _AI.TargetHeatlh.transform.position, Quaternion.identity);
            _AI.TargetHeatlh.TakeDamage();
        }
        else if(_AI.TargetHeatlh.gameObject.activeInHierarchy == false)
        {
+           Debug.Log("Orblem?");
            animator.SetTrigger("Idle");
        }
     }
